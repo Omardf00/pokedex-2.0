@@ -7,6 +7,7 @@ import com.pokemon.pokedex.entity.Pokemon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class EvolutionFromServiceImpl implements EvolutionFromService {
     @Override
     public List<Pokemon> getEvolutionsByOrigin(Pokemon pokemon) {
         List<EvolutionFrom> evolutionFroms = dao.findAllByOriginPokemon(pokemon);
+        if (evolutionFroms.isEmpty()) return null;
         List<Pokemon> evolutions = new ArrayList<>();
         evolutionFroms.forEach(evolutionFrom -> evolutions.add(evolutionFrom.getEvolutionedPokemon()));
         return evolutions;
@@ -31,7 +33,11 @@ public class EvolutionFromServiceImpl implements EvolutionFromService {
 
     @Override
     public Pokemon getOriginByEvolution(Pokemon pokemon) {
-        return dao.findByEvolutionedPokemon(pokemon).getOriginPokemon();
+        try {
+            return dao.findByEvolutionedPokemon(pokemon).getOriginPokemon();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
