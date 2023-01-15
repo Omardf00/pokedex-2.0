@@ -1,15 +1,14 @@
 package com.pokemon.pokedex.service;
 
-import com.pokemon.pokedex.dao.EvolutionFromDao;
-import com.pokemon.pokedex.dao.PokemonDao;
-import com.pokemon.pokedex.entity.EvolutionFrom;
-import com.pokemon.pokedex.entity.Pokemon;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import com.pokemon.pokedex.dao.EvolutionFromDao;
+import com.pokemon.pokedex.entity.EvolutionFrom;
+import com.pokemon.pokedex.entity.Pokemon;
 
 @Service
 public class EvolutionFromServiceImpl implements EvolutionFromService {
