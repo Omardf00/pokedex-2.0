@@ -13,4 +13,6 @@ public interface EvolutionFromService {
 
     public Pokemon getOriginByEvolution(Pokemon pokemon);
 
+    public EvolutionFrom setEvolutionFrom(EvolutionFrom evolutionFrom);
+
 }

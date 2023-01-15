@@ -33,4 +33,9 @@ public class EvolutionFromServiceImpl implements EvolutionFromService {
     public Pokemon getOriginByEvolution(Pokemon pokemon) {
         return dao.findByEvolutionedPokemon(pokemon).getOriginPokemon();
     }
+
+    @Override
+    public EvolutionFrom setEvolutionFrom(EvolutionFrom evolutionFrom) {
+        return dao.save(evolutionFrom);
+    }
 }
