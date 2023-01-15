@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,7 +19,13 @@ public class EvolutionFromController {
     EvolutionFromService evolutionFromService;
 
     @GetMapping("/evolution")
-    public ResponseEntity<?> getEvolutionsByPokemon(@RequestBody Pokemon pokemon) {
-        return new ResponseEntity<>(evolutionFromService.getEvolutionsByPokemon(pokemon), HttpStatus.OK);
+    public ResponseEntity<?> getEvolutionsByOrigin(@RequestBody Pokemon pokemon) {
+        return new ResponseEntity<>(evolutionFromService.getEvolutionsByOrigin(pokemon), HttpStatus.OK);
     }
+
+    @GetMapping("/origin")
+    public ResponseEntity<?> getOriginByEvolution(@RequestBody Pokemon pokemon) {
+        return new ResponseEntity<>(evolutionFromService.getOriginByEvolution(pokemon), HttpStatus.OK);
+    }
+    
 }

@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface EvolutionFromDao extends CrudRepository<EvolutionFrom, Integer>{
 	public List<EvolutionFrom> findAllByOriginPokemon(Pokemon pokemon);
+	public EvolutionFrom findByEvolutionedPokemon(Pokemon pokemon);
 }

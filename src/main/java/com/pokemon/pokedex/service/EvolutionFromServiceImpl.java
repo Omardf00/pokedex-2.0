@@ -17,10 +17,15 @@ public class EvolutionFromServiceImpl implements EvolutionFromService {
     EvolutionFromDao dao;
 
     @Override
-    public List<Pokemon> getEvolutionsByPokemon(Pokemon pokemon) {
+    public List<Pokemon> getEvolutionsByOrigin(Pokemon pokemon) {
         List<EvolutionFrom> evolutionFroms = dao.findAllByOriginPokemon(pokemon);
         List<Pokemon> evolutions = new ArrayList<>();
         evolutionFroms.forEach(evolutionFrom -> evolutions.add(evolutionFrom.getEvolutionedPokemon()));
         return evolutions;
+    }
+
+    @Override
+    public Pokemon getOriginByEvolution(Pokemon pokemon) {
+        return dao.findByEvolutionedPokemon(pokemon).getOriginPokemon();
     }
 }
