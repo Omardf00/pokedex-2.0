@@ -41,24 +41,24 @@ public class PokemonController {
 			
 			if(pokemon == null) {
 				response.put("message", "The pokemon called " + name + " does not appear in the data base");
-				return new ResponseEntity<Map<String,Object>>(response, HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			}
 			
 		} catch (DataAccessException e) {
 			response.put("error", "We ran into a problem trying to access the database");
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (Error e) {
 			response.put("error", "The service is not available");
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		return new ResponseEntity<Pokemon>(pokemon, HttpStatus.OK);
+		return new ResponseEntity<>(pokemon, HttpStatus.OK);
 	}
 	
 	@GetMapping("/")
 	public ResponseEntity<?> getPokemons(){
 		
-		List<Pokemon> pokemons = new ArrayList<>();
+		List<Pokemon> pokemons;
 		Map<String, Object> response = new HashMap<>();
 		
 		try {
@@ -67,24 +67,24 @@ public class PokemonController {
 			
 		} catch (DataAccessException e) {
 			response.put("error", "We ran into a problem trying to access the database");
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (Error e) {
 			response.put("error", "The service is not available");
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		return new ResponseEntity<List<Pokemon>>(pokemons, HttpStatus.OK);
+		return new ResponseEntity<>(pokemons, HttpStatus.OK);
 	}
 	
 	@GetMapping("/pokemonByType")
 	public ResponseEntity<?> getPokemonsByType(@Valid @RequestBody Type type, BindingResult result){
 		
-		List<Pokemon> pokemons = new ArrayList<>();
+		List<Pokemon> pokemons;
 		Map<String, Object> response = new HashMap<>();
 		
 		if(result.hasErrors()) {
 			response.put("message", "The syntax of the body is not correct");
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 		}
 		
 		try {
@@ -93,25 +93,25 @@ public class PokemonController {
 			
 			if(pokemons == null) {
 				response.put("message", "The type " + type + " does no appear in the data base");
-				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			}
 			
 		} catch (DataAccessException e) {
 			response.put("error", "We ran into a problem trying to access the database");
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (Error e) {
 			response.put("error", "The service is not available");
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		return new ResponseEntity<List<Pokemon>>(pokemons, HttpStatus.OK);
+		return new ResponseEntity<>(pokemons, HttpStatus.OK);
 		
 	}
 	
 	@GetMapping("/pokemonById/{id}")
 	public ResponseEntity<?> getPokemonById(@PathVariable("id") int numPokedex){
 		
-		Pokemon pokemon = new Pokemon();
+		Pokemon pokemon;
 		Map<String, Object> response = new HashMap<>();
 		
 		try {
@@ -121,19 +121,19 @@ public class PokemonController {
 			if (pokemon == null) {
 				
 				response.put("message", "The pokemon with the id " + numPokedex + " does not appear in the data base");
-				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 				
 			}
 			
 		} catch (DataAccessException e) {
 			response.put("error", "We ran into a problem trying to access the database");
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (Error e) {
 			response.put("error", "The service is not available");
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		
-		return new ResponseEntity<Pokemon>(pokemon, HttpStatus.OK);
+		return new ResponseEntity<>(pokemon, HttpStatus.OK);
 		
 	}
 
