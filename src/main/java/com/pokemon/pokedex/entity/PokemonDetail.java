@@ -9,6 +9,9 @@ import lombok.Data;
 public class PokemonDetail {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int idPokemonDetail;
+
     @OneToOne
     @JoinColumn(name = "num_pokedex")
     private Pokemon pokemon;
