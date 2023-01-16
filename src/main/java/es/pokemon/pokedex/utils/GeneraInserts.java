@@ -20,12 +20,16 @@ public class GeneraInserts {
                 String line;
                 int counter = 0;
                 while ((line = br.readLine()) != null) {
-                    String[] fields = line.split(";");
+                    String[] fields = line.split(",");
                     values = new StringBuilder();
                     for (String field : fields) {
                         if (counter == 0) {
                             fieldsNames.append(field).append(", ");
-                        } else values.append(field).append(", ");
+                        } else {
+                            if (isNumeric(field)) {
+                                values.append(field).append(", ");
+                            } else values.append("\"").append(field).append("\", ");
+                        }
                     }
 
                     if (counter == 0)
@@ -41,6 +45,15 @@ public class GeneraInserts {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        }
+    }
+
+    public static boolean isNumeric(String number) {
+        try {
+            Double.parseDouble(number);
+            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 }
