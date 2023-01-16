@@ -1,6 +1,8 @@
 package com.pokemon.pokedex.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +28,7 @@ public class PokemonDetailController {
 	@Autowired
 	PokemonDetailService pokemonDetailService;
 	
-	@GetMapping("/details")
+	@GetMapping("/detailsByPokemon")
 	public ResponseEntity<?> getPokemonDetails(@Valid @RequestBody Pokemon pokemon, BindingResult result){
 		
 		PokemonDetail pokemonFinal = new PokemonDetail();
@@ -57,6 +59,28 @@ public class PokemonDetailController {
 		}
 		
 		return new ResponseEntity<>(pokemonFinal, HttpStatus.OK);
+	}
+	
+	@GetMapping("/details")
+	public ResponseEntity<?> getAllPokemonDetails(){
+		
+		List<PokemonDetail> pokemons = new ArrayList<>();
+		Map<String, Object> response = new HashMap<>();
+		
+		try {
+			
+			pokemons = pokemonDetailService.findAll();
+			
+		} catch (DataAccessException e) {
+			response.put("error", "We ran into a problem trying to access the database");
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		} catch (Error e) {
+			response.put("error", "The service is not available");
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<List<PokemonDetail>>(pokemons, HttpStatus.OK);
+		
 	}
 
 }
