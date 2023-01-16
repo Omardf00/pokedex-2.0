@@ -28,7 +28,7 @@ public class PokemonDetailController {
 	@Autowired
 	PokemonDetailService pokemonDetailService;
 	
-	@GetMapping("/details")
+	@GetMapping("/detailsByPokemon")
 	public ResponseEntity<?> getPokemonDetails(@Valid @RequestBody Pokemon pokemon, BindingResult result){
 		
 		PokemonDetail pokemonFinal = new PokemonDetail();
