@@ -791,4 +791,11 @@ INSERT INTO movement_category(name) values("Físico");
 INSERT INTO movement_category(name) values("Especial");
 INSERT INTO movement_category(name) values("Efecto Estado");
 
+/*Contest*/
+INSERT INTO contest(name) values("Belleza");
+INSERT INTO contest(name) values("Carisma");
+INSERT INTO contest(name) values("Dulzura");
+INSERT INTO contest(name) values("Dureza");
+INSERT INTO contest(name) values("Ingenio");
+
 COMMIT;

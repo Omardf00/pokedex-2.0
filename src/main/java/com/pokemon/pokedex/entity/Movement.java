@@ -32,11 +32,13 @@ public class Movement {
 	@NotNull
 	private int priority;
 
-	@JoinColumn(name = "movement_category")
+	@JoinColumn(name = "id_movement_category")
 	@OneToOne
 	private MovementCategory movementCategory;
 
-	private String contest;
+	@JoinColumn(name = "id_contest")
+	@OneToOne
+	private Contest contest;
 
 	@JoinColumn(name="id_type")
 	@ManyToOne
