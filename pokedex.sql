@@ -791,4 +791,16 @@ INSERT INTO movement_category(name) values("Físico");
 INSERT INTO movement_category(name) values("Especial");
 INSERT INTO movement_category(name) values("Efecto Estado");
 
+/*Contest*/
+INSERT INTO contest(name) values("Belleza");
+INSERT INTO contest(name) values("Carisma");
+INSERT INTO contest(name) values("Dulzura");
+INSERT INTO contest(name) values("Dureza");
+INSERT INTO contest(name) values("Ingenio");
+
+/*Movement*/
+INSERT INTO movement(name, id_type, id_movement_category, id_contest, description, secondary_effect, power, pp, movement.precision, priority) values("Burbuja", 1, 2, 3, "Lanza burbujas en tres direcciones y causa daño a los enemigos a su alcance. También puede reducir su velocidad de desplazamiento.", "Reducir la velocidad de los oponentes (10%)", 40, 30, 100, 0);
+INSERT INTO movement(name, id_type, id_movement_category, id_contest, description, secondary_effect, power, pp, movement.precision, priority) values("Cascada", 1, 1, 4, "El pokémon se lanza contra el enemigo a una velocidad asombrosa. También se puede utilizar para escalar una cascada.", "Amedrentar al objetivo (20%)", 80, 15, 100, 0);
+INSERT INTO movement(name, id_type, id_movement_category, id_contest, description, secondary_effect, power, pp, movement.precision, priority) values("Hidrobomba", 1, 2, 1, "El enemigo es atacado por un gran volumen de agua lanzado bajo una gran presión.", "null", 110, 5, 80, 0);
+
 COMMIT;
