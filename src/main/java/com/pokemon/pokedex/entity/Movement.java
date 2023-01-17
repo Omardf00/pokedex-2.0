@@ -21,8 +21,6 @@ public class Movement {
     
     @NotNull
     private int precision;
-    
-    private String description;
 
     private String secondaryEffect;
 
@@ -32,7 +30,6 @@ public class Movement {
     @NotNull
     private int priority;
 
-<<<<<<< HEAD
     @JoinColumn(name = "id_movement_category")
     @OneToOne
     private MovementCategory movementCategory;
@@ -40,15 +37,6 @@ public class Movement {
     @JoinColumn(name = "id_contest")
     @OneToOne
     private Contest contest;
-=======
-	@JoinColumn(name = "id_movement_category")
-	@OneToOne
-	private MovementCategory movementCategory;
-
-	@JoinColumn(name = "id_contest")
-	@OneToOne
-	private Contest contest;
->>>>>>> feature/ArreglandoEntidades
 
     @JoinColumn(name="id_type")
     @ManyToOne
