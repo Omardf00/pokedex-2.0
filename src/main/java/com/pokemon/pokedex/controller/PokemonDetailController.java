@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ import com.pokemon.pokedex.service.PokemonDetailService;
 
 import jakarta.validation.Valid;
 
+@CrossOrigin(origins = {"http://localhost:4200"})
 @Controller
 @RequestMapping("/api/v2/pokedex/pokemon")
 public class PokemonDetailController {
