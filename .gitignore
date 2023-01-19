@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### Pokédex ###
-*.properties
+./src/main/resources/application.properties
