@@ -25,10 +25,6 @@ public class Pokemon {
 	@NotNull
 	private String name;
 	
-	private double weight;
-	
-	private double height;
-	
 	@ManyToMany
 	@JoinTable(
 			name = "pokemon_type",

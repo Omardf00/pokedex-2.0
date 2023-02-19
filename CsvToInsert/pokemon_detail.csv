@@ -1,0 +1,152 @@
+num_pokedex,category,weight,height,egg_group,male,female,habitat,colour,generation,figure,fingerprint,scream
+1,Semilla,6.9,0.7,Monstruo-Planta,87.5,12.5,Pradera,Verde,Primera,NULL,NULL,NULL
+2,Semilla,13,1,Monstruo-Planta,87.5,12.5,Pradera,Verde,Primera,NULL,NULL,NULL
+3,Semilla,100,2,Monstruo-Planta,87.5,12.5,Pradera,Verde,Primera,NULL,NULL,NULL
+4,Lagartija,8.5,0.6,Monstruo-Dragón,87.5,12.5,Montaña,Rojo,Primera,NULL,NULL,NULL
+5,Llama,19,1.1,Monstruo-Dragón,87.5,12.5,Montaña,Rojo,Primera,NULL,NULL,NULL
+6,Llama,90.5,1.7,Monstruo-Dragón,87.5,12.5,Montaña,Rojo,Primera,NULL,NULL,NULL
+7,Tortuguita,9,0.5,Monstruo-Agua-1,87.5,12.5,Agua Dulce,Azul,Primera,NULL,NULL,NULL
+8,Tortuga,22.5,1,Monstruo-Agua-1,87.5,12.5,Agua Dulce,Azul,Primera,NULL,NULL,NULL
+9,Armazón,85.5,1.6,Monstruo-Agua-1,87.5,12.5,Agua Dulce,Azul,Primera,NULL,NULL,NULL
+10,Gusano,2.9,0.3,Bicho,50,50,Bosque,Verde,Primera,NULL,NULL,NULL
+11,Capullo,9.9,0.7,Bicho,50,50,Bosque,Verde,Primera,NULL,NULL,NULL
+12,Mariposa,32,1.1,Bicho,50,50,Bosque,Blanco,Primera,NULL,NULL,NULL
+13,Oruga,3.2,0.3,Bicho,50,50,Bosque,Marrón,Primera,NULL,NULL,NULL
+14,Capullo,10,0.6,Bicho,50,50,Bosque,Amarillo,Primera,NULL,NULL,NULL
+15,Abeja Veneno,29.5,1,Bicho,50,50,Bosque,Amarillo,Primera,NULL,NULL,NULL
+16,Pajarito,1.8,0.3,Volador,50,50,Bosque,Marrón,Primera,NULL,NULL,NULL
+17,Pájaro,30,1.1,Volador,50,50,Bosque,Marrón,Primera,NULL,NULL,NULL
+18,Pájaro,39.5,1.5,Volador,50,50,Bosque,Marrón,Primera,NULL,NULL,NULL
+19,Ratón,3.5,0.3,Campo,50,50,Pradera,Morado,Primera,NULL,NULL,NULL
+20,Ratón,18.5,0.7,Campo,50,50,Pradera,Marrón,Primera,NULL,NULL,NULL
+21,Pajarito,2,0.3,Volador,50,50,Campo,Marrón,Primera,NULL,NULL,NULL
+22,Pico,38,1.2,Volador,50,50,Campo,Marrón,Primera,NULL,NULL,NULL
+23,Serpiente,6.9,2,Campo-Dragón,50,50,Pradera,Morado,Primera,NULL,NULL,NULL
+24,Cobra,65,3.5,Campo-Dragón,50,50,Pradera,Morado,Primera,NULL,NULL,NULL
+25,Ratón,6,0.4,Campo-Hada,50,50,Bosque,Amarilo,Primera,NULL,NULL,NULL
+26,Ratón,30,0.8,Campo-Hada,50,50,Bosque,Amarilo,Primera,NULL,NULL,NULL
+27,Ratón,12,0.6,Campo,50,50,Campo,Amarilo,Primera,NULL,NULL,NULL
+28,Ratón,29.5,1,Campo,50,50,Campo,Amarilo,Primera,NULL,NULL,NULL
+29,Pin Veneno,7,0.4,Monstruo-Campo,0,100,Pradera,Azul,Primera,NULL,NULL,NULL
+30,Pin Veneno,20,0.8,Desconocido,0,100,Pradera,Azul,Primera,NULL,NULL,NULL
+31,Taladro,60,1.3,Desconocido,0,100,Pradera,Azul,Primera,NULL,NULL,NULL
+32,Pin Veneno,9,0.5,Monstruo-Campo,100,0,Pradera,Morado,Primera,NULL,NULL,NULL
+33,Pin Veneno,19.5,0.9,Monstruo-Campo,100,0,Pradera,Morado,Primera,NULL,NULL,NULL
+34,Taladro,62,1.4,Monstruo-Campo,100,0,Pradera,Morado,Primera,NULL,NULL,NULL
+35,Hada,7.5,0.6,Hada,25,75,Montaña,Rosa,Primera,NULL,NULL,NULL
+36,Hada,40,1.3,Hada,25,75,Montaña,Rosa,Primera,NULL,NULL,NULL
+37,Zorro,9.9,0.6,Campo,25,75,Pradera,Marrón,Primera,NULL,NULL,NULL
+38,Zorro,19.9,1.1,Campo,25,75,Pradera,Amarillo,Primera,NULL,NULL,NULL
+39,Globo,5.5,0.5,Hada,25,75,Pradera,Rosa,Primera,NULL,NULL,NULL
+40,Globo,12,1,Hada,25,75,Pradera,Rosa,Primera,NULL,NULL,NULL
+41,Murciélago,7.5,0.8,Volador,50,50,Caverna,Morado,Primera,NULL,NULL,NULL
+42,Murciélago,55,1.6,Volador,50,50,Caverna,Morado,Primera,NULL,NULL,NULL
+43,Hierbajo,5.4,0.5,Planta,50,50,Pradera,Azul,Primera,NULL,NULL,NULL
+44,Hierbajo,8.6,0.8,Planta,50,50,Pradera,Azul,Primera,NULL,NULL,NULL
+45,Flor,18.6,1.2,Planta,50,50,Pradera,Rojo,Primera,NULL,NULL,NULL
+46,Hongo,5.4,0.3,Bicho-Planta,50,50,Bosque,Rojo,Primera,NULL,NULL,NULL
+47,Hongo,29.5,1,Bicho-Planta,50,50,Bosque,Rojo,Primera,NULL,NULL,NULL
+48,Insecto,30,1,Bicho,50,50,Bosque,Mroado,Primera,NULL,NULL,NULL
+49,Pollila Venenosa,12.5,1.5,Bicho,50,50,Bosque,Morado,Primera,NULL,NULL,NULL
+50,Topo,0.8,0.2,Campo,50,50,Caverna,Marrón,Primera,NULL,NULL,NULL
+51,Topo,33.3,0.7,Campo,50,50,Caverna,Marrón,Primera,NULL,NULL,NULL
+52,Gato Araña,4.2,0.4,Campo,50,50,Ciudad,Amarillo,Primera,NULL,NULL,NULL
+53,Gato Fino,32,1,Campo,50,50,Ciudad,Amarillo,Primera,NULL,NULL,NULL
+54,Pato,19.6,0.8,Campo-Agua-1,50,50,Agua Dulce,Amarillo,Primera,NULL,NULL,NULL
+55,Pato,76.6,1.7,Agua-1-Campo,50,50,Agua Dulce,Azul,Primera,NULL,NULL,NULL
+56,Mono Cerdo,28,0.5,Campo,50,50,Montaña,Marrón,Primera,NULL,NULL,NULL
+57,Mono Cerdo,32,1,Campo,50,50,Montaña,Marrón,Primera,NULL,NULL,NULL
+58,Perrito,19,0.7,Campo,50,50,Pradera,Marrón,Primera,NULL,NULL,NULL
+59,Leyenda,155,1.9,Campo,75,25,Pradera,Marrón,Primera,NULL,NULL,NULL
+60,Renacuajo,12.4,0.6,Agua-1,50,50,Agua Dulce,Azul,Primera,NULL,NULL,NULL
+61,Renacuajo,20,1,Agua-1,50,50,Agua Dulce,Azul,Primera,NULL,NULL,NULL
+62,Renacuajo,54,1.3,Agua-1,50,50,Agua Dulce,Azul,Primera,NULL,NULL,NULL
+63,Psi,19.5,0.9,Humanoide,75,25,Ciudad,Amarillo,Primera,NULL,NULL,NULL
+64,Psi,56.5,1.3,Humanoide,75,25,Ciudad,Amarillo,Primera,NULL,NULL,NULL
+65,Psi,48,1.5,Humanoide,75,25,Ciudad,Amarillo,Primera,NULL,NULL,NULL
+66,Superpoder,19.5,0.8,Humanoide,75,25,Montaña,Gris,Primera,NULL,NULL,NULL
+67,Superpoder,70.5,1.5,Humanoide,75,25,Montaña,Gris,Primera,NULL,NULL,NULL
+68,Superpoder,130,1.6,Humanoide,75,25,Montaña,Gris,Primera,NULL,NULL,NULL
+69,Flor,4,0.7,Planta,50,50,Bosque,Verde,Primera,NULL,NULL,NULL
+70,Matamoscas,6.4,1,Planta,50,50,Bosque,Verde,Primera,NULL,NULL,NULL
+71,Matamoscas,15.5,1.7,Planta,50,50,Bosque,Verde,Primera,NULL,NULL,NULL
+72,Medusa,45.5,0.9,Agua-3,50,50,Agua Salada,Azul,Primera,NULL,NULL,NULL
+73,Medusa,55,1.6,Agua-3,50,50,Agua Salada,Azul,Primera,NULL,NULL,NULL
+74,Roca,20,4,Mineral,50,50,Montaña,Marrón,Primera,NULL,NULL,NULL
+75,Roca,105,1,Mineral,50,50,Montaña,Marrón,Primera,NULL,NULL,NULL
+76,Megatón,300,1.4,Mineral,50,50,Montaña,Marrón,Primera,NULL,NULL,NULL
+77,Caballo Fuego,30,1,Campo,50,50,Pradera,Amarillo,Primera,NULL,NULL,NULL
+78,Caballo Fuego,95,1.7,Campo,50,50,Pradera,Amarillo,Primera,NULL,NULL,NULL
+79,Atontado,36,1.2,Monstruo-Agua-1,50,50,Agua Dulce,Rosa,Primera,NULL,NULL,NULL
+80,Ermitaño,78.5,1.6,Monstruo-Agua-1,50,50,Agua Dulce,Rosa,Primera,NULL,NULL,NULL
+81,Imán,6,0.3,Mineral,0,0,Campo,Gris,Primera,NULL,NULL,NULL
+82,Imán,60,1,Mineral,0,0,Campo,Gris,Primera,NULL,NULL,NULL
+83,Pato Salvaje,15,0.8,Volador-Campo,50,50,Pradera,Marrón,Primera,NULL,NULL,NULL
+84,Ave Gemela,39.2,1.4,Volador,50,50,Pradera,Marrón,Primera,NULL,NULL,NULL
+85,Ave Triple,85.2,1.8,Volador,50,50,Pradera,Marrón,Primera,NULL,NULL,NULL
+86,León Marino,90,1.1,Agua-1-Campo,50,50,Agua Salada,Blanco,Primera,NULL,NULL,NULL
+87,León Marino,120,1.7,Agua-1-Campo,50,50,Agua Salada,Blanco,Primera,NULL,NULL,NULL
+88,Lodo,30,0.9,Amorfo,50,50,Ciudad,Morado,Primera,NULL,NULL,NULL
+89,Lodo,30,1.2,Amorfo,50,50,Ciudad,Morado,Primera,NULL,NULL,NULL
+90,Bivaldo,4,0.3,Agua-3,50,50,Agua Salada,Morado,Primera,NULL,NULL,NULL
+91,Bivaldo,132.5,1.5,Agua-3,50,50,Agua Salada,Morado,Primera,NULL,NULL,NULL
+92,Gas,0.1,1.3,Amorfo,50,50,Caverna,Morado,Primera,NULL,NULL,NULL
+93,Gas,0.1,1.6,Amorfo,50,50,Caverna,Morado,Primera,NULL,NULL,NULL
+94,Sombra,40.5,1.5,Amorfo,50,50,Caverna,Morado,Primera,NULL,NULL,NULL
+95,Serpiente Roca,210,8.8,Mineral,50,50,Caverna,Gris,Primera,NULL,NULL,NULL
+96,Hipnosis,32.4,1,Humanoide,50,50,Pradera,Amarillo,Primera,NULL,NULL,NULL
+97,Hipnosis,75.6,1.6,Humanoide,50,50,Pradera,Amarillo,Primera,NULL,NULL,NULL
+98,Cangrejo,6.5,0.4,Agua-3,50,50,Agua Dulce,Rojo,Primera,NULL,NULL,NULL
+99,Tenaza,60,1.3,Agua-3,50,50,Agua Dulce,Rojo,Primera,NULL,NULL,NULL
+100,Bola,10.4,0.5,Mineral,0,0,Ciudad,Rojo,Primera,NULL,NULL,NULL
+101,Bola,66.6,1.2,Mineral,0,0,Ciudad,Rojo,Primera,NULL,NULL,NULL
+102,Huevo,2.5,0.4,Planta,50,50,Bosque,Rosa,Primera,NULL,NULL,NULL
+103,Coco,120,2,Planta,50,50,Bosque,Amarillo,Primera,NULL,NULL,NULL
+104,Solitario,6.5,0.4,Monstruo,50,50,Montaña,Marrón,Primera,NULL,NULL,NULL
+105,Apilahueso,45,1,Monstruo,50,50,Montaña,Marrón,Primera,NULL,NULL,NULL
+106,Patada,49.8,1.5,Humanoide,100,0,Ciudad,Marrón,Primera,NULL,NULL,NULL
+107,Puñetazo,50.2,1.4,Humanoide,100,0,Ciudad,Marrón,Primera,NULL,NULL,NULL
+108,Lametazo,65.5,1.2,Monstruo,50,50,Pradera,Rosa,Primera,NULL,NULL,NULL
+109,Gas Venenoso,1,0.6,Amorfo,50,50,Ciudad,Morado,Primera,NULL,NULL,NULL
+110,Gas Venenoso,9.5,1.2,Amorfo,50,50,Ciudad,Morado,Primera,NULL,NULL,NULL
+111,Clavos,115,1,Monstruo-Campo,50,50,Campo,Gris,Primera,NULL,NULL,NULL
+112,Taladro,120,1.9,Monstruo-Campo,50,50,Campo,Gris,Primera,NULL,NULL,NULL
+113,Huevo,34.6,1.1,Hada,0,100,Ciudad,Rosa,Primera,NULL,NULL,NULL
+114,Enredadera,35,1,Planta,50,50,Pradera,Azul,Primera,NULL,NULL,NULL
+115,Maternal,80,2.2,Monstruo,0,100,Pradera,Marrón,Primera,NULL,NULL,NULL
+116,Dragón,8,0.4,Agua-1-Dragón,50,50,Agua Salada,Azul,Primera,NULL,NULL,NULL
+117,Dragón,25,1.2,Agua-1-Dragón,50,50,Agua Salada,Azul,Primera,NULL,NULL,NULL
+118,Pez Color,15,0.6,Agua-2,50,50,Agua Dulce,Rojo,Primera,NULL,NULL,NULL
+119,Pez Color,39,1.3,Agua-2,50,50,Agua Dulce,Rojo,Primera,NULL,NULL,NULL
+120,Estrella,34.5,0.8,Agua-3,0,0,Agua Salada,Marrón,Primera,NULL,NULL,NULL
+121,Misterioso,80,1.1,Agua-3,0,0,Agua Salada,Morado,Primera,NULL,NULL,NULL
+122,Barrera,54.5,1.3,Humanoide,50,50,Ciudad,Rosa,Primera,NULL,NULL,NULL
+123,Mantis,56,1.5,Bicho,50,50,Pradera,Verde,Primera,NULL,NULL,NULL
+124,Forma Humana,40.6,1.4,Humanoide,0,100,Ciudad,Rojo,Primera,NULL,NULL,NULL
+125,Eléctrico,33,1.1,Humanoide,75,25,Pradera,Amarillo,Primera,NULL,NULL,NULL
+126,Escupefuego,44.5,1.3,Humanoide,75,25,Montaña,Rojo,Primera,NULL,NULL,NULL
+127,Escarabajo,55,1.5,Bicho,50,50,Bosque,Marrón,Primera,NULL,NULL,NULL
+128,Toro Bravo,88.4,1.4,Campo,100,0,Pradera,Marrón,Primera,NULL,NULL,NULL
+129,Pez,10,0.9,Agua-2-Dragón,50,50,Agua Dulce,Rojo,Primera,NULL,NULL,NULL
+130,Atrocidad,235,6.5,Agua-2-Dragón,50,50,Agua Dulce,Azul,Primera,NULL,NULL,NULL
+131,Transporte,220,2.5,Monstruo-Agua-1,50,50,Agua Salada,Azul,Primera,NULL,NULL,NULL
+132,Transformación,4,0.3,Ditto,0,0,Ciudad,Morado,Primera,NULL,NULL,NULL
+133,Evolución,6.5,0.3,Campo,87.5,12.5,Ciudad,Marrón,Primera,NULL,NULL,NULL
+134,Burbuja,29,1,Campo,87.5,12.5,Ciudad,Azul,Primera,NULL,NULL,NULL
+135,Relámpago,24.5,0.8,Campo,87.5,12.5,Ciudad,Amarillo,Primera,NULL,NULL,NULL
+136,Llama,25,0.9,Campo,87.5,12.5,Ciudad,Rojo,Primera,NULL,NULL,NULL
+137,Virtual,36.5,0.8,Mineral,0,0,Ciudad,Rosa,Primera,NULL,NULL,NULL
+138,Espiral,7.5,0.4,Agua-1-Agua-3,87.5,12.5,Agua Salada,Azul,Primera,NULL,NULL,NULL
+139,Espiral,35,1,Agua-1-Agua-3,87.5,12.5,Agua Salada,Azul,Primera,NULL,NULL,NULL
+140,Armazón,11.5,0.5,Agua-1-Agua-3,87.5,12.5,Agua Salada,Marrón,Primera,NULL,NULL,NULL
+141,Armazón,40.5,1.3,Agua-1-Agua-3,87.5,12.5,Agua Salada,Marrón,Primera,NULL,NULL,NULL
+142,Fósil,59,1.8,Volador,87.5,12.5,Montaña,Morado,Primera,NULL,NULL,NULL
+143,Dormir,460,2.1,Monstruo,87.5,12.5,Montaña,Negro,Primera,NULL,NULL,NULL
+144,Congelar,55.4,1.7,Desconocido,0,0,Raro,Azul,Primera,NULL,NULL,NULL
+145,Eléctrico,52.6,1.7,Desconocido,0,0,Raro,Amarillo,Primera,NULL,NULL,NULL
+146,Llama,60,2,Desconocido,0,0,Raro,Rojo,Primera,NULL,NULL,NULL
+147,Dragón,3.3,1.8,Agua-1-Dragón,50,50,Agua Dulce,Azul,Primera,NULL,NULL,NULL
+148,Dragón,16.5,4,Agua-1-Dragón,50,50,Agua Dulce,Azul,Primera,NULL,NULL,NULL
+149,Dragón,210,2.2,Agua-1-Dragón,50,50,Agua Dulce,Marrón,Primera,NULL,NULL,NULL
+150,Genético,122,2,Desconocido,0,0,Raro,Morado,Primera,NULL,NULL,NULL
+151,Nueva especie,4,0.4,Desconocido,0,0,Raro,Rosa,Primera,NULL,NULL,NULL
