@@ -1,0 +1,257 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+tags:
+- name: Pokemon Services
+  description: A list of the services related with the pokemons
+- name: Pokemon Evolution Services
+  description: A list of the services related with the evolution levels
+- name: Pokemon Deatils Services
+  description: A list of the services related with the details of the pokemons
+- name: Pokemon Evolution From Services
+  description: A list of the services related with the origins of the pokemons
+paths:
+  /api/v2/pokedex/pokemon/evolutionFrom:
+    get:
+      tags:
+      - Pokemon Evolution From Services
+      operationId: getEvolutionFroms
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    post:
+      tags:
+      - Pokemon Evolution From Services
+      operationId: setEvolutionFrom
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EvolutionFrom'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/pokemon/{name}:
+    get:
+      tags:
+      - Pokemon Services
+      operationId: getPokemon
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/pokemon/pokemonByType:
+    get:
+      tags:
+      - Pokemon Services
+      operationId: getPokemonsByType
+      parameters:
+      - name: type
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/Type'
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/pokemon/pokemonById/{id}:
+    get:
+      tags:
+      - Pokemon Services
+      operationId: getPokemonById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/pokemon/origin:
+    get:
+      tags:
+      - Pokemon Evolution From Services
+      operationId: getOriginByEvolution
+      parameters:
+      - name: pokemon
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/Pokemon'
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/pokemon/evolution:
+    get:
+      tags:
+      - Pokemon Evolution From Services
+      operationId: getEvolutionsByOrigin
+      parameters:
+      - name: pokemon
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/Pokemon'
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/pokemon/evolutionLevel:
+    get:
+      tags:
+      - Pokemon Evolution Services
+      operationId: getEvolutionLevelByPokemon
+      parameters:
+      - name: pokemon
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/Pokemon'
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/pokemon/details:
+    get:
+      tags:
+      - Pokemon Deatils Services
+      operationId: getAllPokemonDetails
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/pokemon/detailsByPokemon:
+    get:
+      tags:
+      - Pokemon Deatils Services
+      operationId: getPokemonDetails
+      parameters:
+      - name: pokemon
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/Pokemon'
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/pokemon/allEvolutionLevels:
+    get:
+      tags:
+      - Pokemon Evolution Services
+      operationId: getAllEvolutionLevels
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/pokemon/:
+    get:
+      tags:
+      - Pokemon Services
+      operationId: getPokemons
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+components:
+  schemas:
+    EvolutionForm:
+      required:
+      - name
+      type: object
+      properties:
+        idEvolutionForm:
+          type: integer
+          format: int32
+        name:
+          type: string
+    EvolutionFrom:
+      type: object
+      properties:
+        idEvolution:
+          type: integer
+          format: int32
+        originPokemon:
+          $ref: '#/components/schemas/Pokemon'
+        evolutionedPokemon:
+          $ref: '#/components/schemas/Pokemon'
+        evolutionForm:
+          $ref: '#/components/schemas/EvolutionForm'
+    Pokemon:
+      required:
+      - name
+      type: object
+      properties:
+        numPokedex:
+          type: integer
+          format: int32
+        name:
+          type: string
+        type:
+          type: array
+          items:
+            $ref: '#/components/schemas/Type'
+    Type:
+      required:
+      - type
+      type: object
+      properties:
+        idType:
+          type: integer
+          format: int32
+        type:
+          type: string
