@@ -20,7 +20,7 @@ public class Movement {
     private int power;
     
     @NotNull
-    private int precision;
+    private int accuracy;
 
     private String secondaryEffect;
 
