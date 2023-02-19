@@ -20,11 +20,13 @@ import com.pokemon.pokedex.entity.Pokemon;
 import com.pokemon.pokedex.entity.Type;
 import com.pokemon.pokedex.service.PokemonService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/api/v2/pokedex/pokemon")
+@Tag(name = "Pokemon Services", description = "A list of the services related with the pokemons")
 public class PokemonController {
 	
 	@Autowired

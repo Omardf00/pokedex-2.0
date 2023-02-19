@@ -20,11 +20,13 @@ import com.pokemon.pokedex.entity.EvolutionLevel;
 import com.pokemon.pokedex.entity.Pokemon;
 import com.pokemon.pokedex.service.EvolutionLevelService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/api/v2/pokedex/pokemon")
+@Tag(name = "Pokemon Evolution Services", description = "A list of the services related with the evolution levels")
 public class EvolutionLevelController {
 
 	@Autowired

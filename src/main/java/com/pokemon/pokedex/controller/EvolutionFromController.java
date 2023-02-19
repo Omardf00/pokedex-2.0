@@ -17,8 +17,11 @@ import com.pokemon.pokedex.entity.EvolutionFrom;
 import com.pokemon.pokedex.entity.Pokemon;
 import com.pokemon.pokedex.service.EvolutionFromService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/api/v2/pokedex/pokemon")
+@Tag(name = "Pokemon Evolution From Services", description = "A list of the services related with the origins of the pokemons")
 public class EvolutionFromController {
 
     @Autowired
