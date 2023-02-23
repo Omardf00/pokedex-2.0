@@ -3,11 +3,13 @@ package com.pokemon.pokedex.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pokemon.pokedex.dao.UserDao;
 import com.pokemon.pokedex.entity.User;
 
+@Service
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
@@ -31,7 +33,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void delete(int id) {
+	public void deleteById(int id) {
 		dao.deleteById(id);
 	}
 
