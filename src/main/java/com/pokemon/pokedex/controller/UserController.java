@@ -65,17 +65,17 @@ public class UserController {
 			
 			user = userService.findById(id);
 			
+			if(user == null) {
+				response.put("error", "The user with the id " + id + " does't appear in the database");
+				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+			}
+			
 		} catch (DataAccessException e) {
 			response.put("error", "We ran into a problem trying to access the database");
 			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		} catch (Error e) {
 			response.put("error", "The service is not available");
 			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-		
-		if(user == null) {
-			response.put("error", "The user with the id " + id + " does't appear in the database");
-			return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
 		}
 		
 		return new ResponseEntity<>(user, HttpStatus.OK);
@@ -168,7 +168,7 @@ public class UserController {
 			
 			if (tmpUser == null) {
 				response.put("error", "The user with the id " + id + " does't appear in the database");
-				return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			}
 			
 			userService.deleteById(id);
