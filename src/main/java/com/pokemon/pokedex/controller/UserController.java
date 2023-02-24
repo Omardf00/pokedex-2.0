@@ -22,6 +22,7 @@ import com.pokemon.pokedex.entity.User;
 import com.pokemon.pokedex.responses.UserResponse;
 import com.pokemon.pokedex.service.UserService;
 
+import es.pokemon.pokedex.utils.PasswordEncoder;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
@@ -32,6 +33,9 @@ public class UserController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	PasswordEncoder encoder;
 	
 	@GetMapping("/")
 	public ResponseEntity<?> getAllUsers(){
@@ -96,6 +100,9 @@ public class UserController {
 				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			}
 			
+			String codedPasswd = encoder.encoder(user.getPassword());
+			user.setPassword(codedPasswd);
+			
 			tmpUser = userService.save(user);
 			
 			createUserResponse.setMessage("The user has successfully been created");
@@ -138,9 +145,11 @@ public class UserController {
 				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			}
 			
+			String codedPasswd = encoder.encoder(user.getPassword());
+			
 			tmpUser.setName(user.getName());
 			tmpUser.setEmail(user.getEmail());
-			tmpUser.setPassword(user.getPassword());
+			tmpUser.setPassword(codedPasswd);
 			
 			updateUserResponse.setUser(userService.save(tmpUser));
 			updateUserResponse.setMessage("The user has successfuly been updated");
