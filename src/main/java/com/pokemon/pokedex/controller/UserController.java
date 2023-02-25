@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +23,6 @@ import com.pokemon.pokedex.entity.User;
 import com.pokemon.pokedex.responses.UserResponse;
 import com.pokemon.pokedex.service.UserService;
 
-import es.pokemon.pokedex.utils.PasswordEncoder;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
@@ -100,7 +100,7 @@ public class UserController {
 				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			}
 			
-			String codedPasswd = encoder.encoder(user.getPassword());
+			String codedPasswd = encoder.encode(user.getPassword());
 			user.setPassword(codedPasswd);
 			
 			tmpUser = userService.save(user);
@@ -145,7 +145,7 @@ public class UserController {
 				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			}
 			
-			String codedPasswd = encoder.encoder(user.getPassword());
+			String codedPasswd = encoder.encode(user.getPassword());
 			
 			tmpUser.setName(user.getName());
 			tmpUser.setEmail(user.getEmail());
