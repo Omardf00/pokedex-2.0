@@ -16,6 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class WebSecurityConfig {
 	
+	@SuppressWarnings("deprecation")
 	@Bean
 	SecurityFilterChain filterChain(HttpSecurity http, AuthenticationManager manager) throws Exception {
 		return http
