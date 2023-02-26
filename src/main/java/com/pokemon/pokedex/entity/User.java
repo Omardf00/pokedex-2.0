@@ -28,6 +28,7 @@ public class User {
 	@NotEmpty
 	@NotNull
 	@Email
+	@Column(unique = true)
 	private String email;
 	
 	@NotEmpty
