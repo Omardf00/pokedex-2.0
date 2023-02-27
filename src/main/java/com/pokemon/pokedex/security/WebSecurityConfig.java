@@ -40,6 +40,8 @@ public class WebSecurityConfig {
 				.sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
+				.oauth2Login()
+				.and()
 				.addFilter(jwtAuthenticationFilter)
 				.addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
 				.build();
