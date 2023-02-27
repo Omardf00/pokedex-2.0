@@ -99,6 +99,12 @@ public class UserController {
 				response.put("message", "There's errors within the provided data");
 				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 			}
+
+			User searchUser = userService.findByEmail(user.getEmail());
+			if(searchUser!=null) {
+				response.put("message", "There's already an user with this email");
+				return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+			}
 			
 			String codedPasswd = encoder.encode(user.getPassword());
 			user.setPassword(codedPasswd);
