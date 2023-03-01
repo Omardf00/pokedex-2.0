@@ -8,6 +8,9 @@ servers:
 tags:
 - name: Pokemon Services
   description: A list of the services related with the pokemons
+- name: Files Services
+  description: A list of the services related with the management of files in the
+    server
 - name: Pokemon Evolution Services
   description: A list of the services related with the evolution levels
 - name: Pokemon Deatils Services
@@ -85,6 +88,40 @@ paths:
             schema:
               $ref: '#/components/schemas/EvolutionFrom'
         required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/file/:
+    get:
+      tags:
+      - Files Services
+      operationId: listFiles
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+    post:
+      tags:
+      - Files Services
+      operationId: uploadFile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - file
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
       responses:
         "200":
           description: OK
