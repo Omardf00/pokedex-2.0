@@ -1,4 +1,4 @@
-package es.pokemon.pokedex.utils;
+package com.pokemon.pokedex.responses;
 
 import java.util.List;
 
