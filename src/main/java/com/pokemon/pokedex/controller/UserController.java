@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pokemon.pokedex.entity.User;
 import com.pokemon.pokedex.responses.UserResponse;
+import com.pokemon.pokedex.service.RoleService;
 import com.pokemon.pokedex.service.UserService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -36,6 +37,9 @@ public class UserController {
 	
 	@Autowired
 	PasswordEncoder encoder;
+	
+	@Autowired
+	RoleService roleService;
 	
 	@GetMapping("/")
 	public ResponseEntity<?> getAllUsers(){
@@ -94,6 +98,9 @@ public class UserController {
 		Map<String, Object> response = new HashMap<>();
 		
 		try {
+			
+			//When making a new user we force it to be a normal user. An admin must change the role
+			user.setRole(roleService.findById(3));
 			
 			if (result.hasErrors()) {
 				response.put("message", "There's errors within the provided data");
