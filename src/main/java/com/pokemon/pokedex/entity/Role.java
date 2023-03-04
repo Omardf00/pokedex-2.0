@@ -5,40 +5,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
-@Table(name="user")
+@Table(name="role")
 @Data
-public class User {
+public class Role {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_user")
-	private int id;
+	@Column(name = "role_id")
+	private int roleId;
 	
 	@NotEmpty
 	@NotNull
-	private String name;
-	
-	@NotEmpty
-	@NotNull
-	@Email
-	@Column(unique = true)
-	private String email;
-	
-	@NotEmpty
-	@NotNull
-	private String password;
-	
-	@OneToOne
-	@JoinColumn(name = "role")
-	Role role;
+	private String Role;
 
 }
