@@ -1,29 +1,46 @@
 openapi: 3.0.1
 info:
-  title: OpenAPI definition
-  version: v0
+  title: Pokedex API
+  description: API based on the first Pokemon generation
+  contact:
+    name: Omar and Gabriel
+    url: https://github.com/Omardf00/pokedex-2.0
+    email: omardominguezfuentes@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://foo.bar
+  version: "2.0"
 servers:
-- url: http://localhost:8080
-  description: Generated server url
+  - url: http:localhost:8080//api/v2/pokedex/pokemon
+    description: Localhost server
+security:
+  - JWT based Secirity: []
 tags:
-- name: Pokemon Services
-  description: A list of the services related with the pokemons
-- name: Files Services
-  description: A list of the services related with the management of files in the
-    server
-- name: Pokemon Evolution Services
-  description: A list of the services related with the evolution levels
-- name: Pokemon Deatils Services
-  description: A list of the services related with the details of the pokemons
-- name: User Services
-  description: A list of the services related with the user's CRUD
-- name: Pokemon Evolution From Services
-  description: A list of the services related with the origins of the pokemons
+  - name: Pokemon Services
+    description: A list of the services related with the pokemons
+  - name: Files Services
+    description: A list of the services related with the management of files in the
+      server
+  - name: Pokemon Evolution Services
+    description: A list of the services related with the evolution levels
+  - name: Pokemon Deatils Services
+    description: A list of the services related with the details of the pokemons
+  - name: WikiDex
+    description: https://www.wikidex.net/wiki/Pok%C3%A9dex
+    externalDocs:
+      description: |-
+        WikiDex is the largest Pokémon encyclopedia in Spanish, with 27,179 articles, covering all the official information on video games, anime, manga, and Collectible Card Game.
+        This content comes from wikidex.net, and must be given attribution to its authors, as specified in the license.
+        Its use is prohibited to PlagioDex (the FANDOOM wiki), for repeatedly copying without giving attribution
+  - name: User Services
+    description: A list of the services related with the user's CRUD
+  - name: Pokemon Evolution From Services
+    description: A list of the services related with the origins of the pokemons
 paths:
   /api/v2/pokedex/user/:
     get:
       tags:
-      - User Services
+        - User Services
       operationId: getAllUsers
       responses:
         "200":
@@ -34,7 +51,7 @@ paths:
                 type: object
     put:
       tags:
-      - User Services
+        - User Services
       operationId: updateUser
       requestBody:
         content:
@@ -51,7 +68,7 @@ paths:
                 type: object
     post:
       tags:
-      - User Services
+        - User Services
       operationId: createUser
       requestBody:
         content:
@@ -69,7 +86,7 @@ paths:
   /api/v2/pokedex/pokemon/evolutionFrom:
     get:
       tags:
-      - Pokemon Evolution From Services
+        - Pokemon Evolution From Services
       operationId: getEvolutionFroms
       responses:
         "200":
@@ -80,7 +97,7 @@ paths:
                 type: object
     post:
       tags:
-      - Pokemon Evolution From Services
+        - Pokemon Evolution From Services
       operationId: setEvolutionFrom
       requestBody:
         content:
@@ -98,7 +115,7 @@ paths:
   /api/v2/pokedex/file/:
     get:
       tags:
-      - Files Services
+        - Files Services
       operationId: listFiles
       responses:
         "200":
@@ -109,14 +126,14 @@ paths:
                 type: object
     post:
       tags:
-      - Files Services
+        - Files Services
       operationId: uploadFile
       requestBody:
         content:
           application/json:
             schema:
               required:
-              - file
+                - file
               type: object
               properties:
                 file:
@@ -132,15 +149,15 @@ paths:
   /api/v2/pokedex/user/{id}:
     get:
       tags:
-      - User Services
+        - User Services
       operationId: getUserById
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
       responses:
         "200":
           description: OK
@@ -150,15 +167,15 @@ paths:
                 type: object
     delete:
       tags:
-      - User Services
+        - User Services
       operationId: deleteUser
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
       responses:
         "200":
           description: OK
@@ -169,14 +186,14 @@ paths:
   /api/v2/pokedex/pokemon/{name}:
     get:
       tags:
-      - Pokemon Services
+        - Pokemon Services
       operationId: getPokemon
       parameters:
-      - name: name
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         "200":
           description: OK
@@ -187,14 +204,14 @@ paths:
   /api/v2/pokedex/pokemon/pokemonByType:
     get:
       tags:
-      - Pokemon Services
+        - Pokemon Services
       operationId: getPokemonsByType
       parameters:
-      - name: type
-        in: query
-        required: true
-        schema:
-          $ref: '#/components/schemas/Type'
+        - name: type
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/Type'
       responses:
         "200":
           description: OK
@@ -205,15 +222,15 @@ paths:
   /api/v2/pokedex/pokemon/pokemonById/{id}:
     get:
       tags:
-      - Pokemon Services
+        - Pokemon Services
       operationId: getPokemonById
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: integer
-          format: int32
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
       responses:
         "200":
           description: OK
@@ -224,14 +241,14 @@ paths:
   /api/v2/pokedex/pokemon/origin:
     get:
       tags:
-      - Pokemon Evolution From Services
+        - Pokemon Evolution From Services
       operationId: getOriginByEvolution
       parameters:
-      - name: pokemon
-        in: query
-        required: true
-        schema:
-          $ref: '#/components/schemas/Pokemon'
+        - name: pokemon
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/Pokemon'
       responses:
         "200":
           description: OK
@@ -242,14 +259,14 @@ paths:
   /api/v2/pokedex/pokemon/evolution:
     get:
       tags:
-      - Pokemon Evolution From Services
+        - Pokemon Evolution From Services
       operationId: getEvolutionsByOrigin
       parameters:
-      - name: pokemon
-        in: query
-        required: true
-        schema:
-          $ref: '#/components/schemas/Pokemon'
+        - name: pokemon
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/Pokemon'
       responses:
         "200":
           description: OK
@@ -260,14 +277,14 @@ paths:
   /api/v2/pokedex/pokemon/evolutionLevel:
     get:
       tags:
-      - Pokemon Evolution Services
+        - Pokemon Evolution Services
       operationId: getEvolutionLevelByPokemon
       parameters:
-      - name: pokemon
-        in: query
-        required: true
-        schema:
-          $ref: '#/components/schemas/Pokemon'
+        - name: pokemon
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/Pokemon'
       responses:
         "200":
           description: OK
@@ -278,7 +295,7 @@ paths:
   /api/v2/pokedex/pokemon/details:
     get:
       tags:
-      - Pokemon Deatils Services
+        - Pokemon Deatils Services
       operationId: getAllPokemonDetails
       responses:
         "200":
@@ -290,14 +307,14 @@ paths:
   /api/v2/pokedex/pokemon/detailsByPokemon:
     get:
       tags:
-      - Pokemon Deatils Services
+        - Pokemon Deatils Services
       operationId: getPokemonDetails
       parameters:
-      - name: pokemon
-        in: query
-        required: true
-        schema:
-          $ref: '#/components/schemas/Pokemon'
+        - name: pokemon
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/Pokemon'
       responses:
         "200":
           description: OK
@@ -308,7 +325,7 @@ paths:
   /api/v2/pokedex/pokemon/allEvolutionLevels:
     get:
       tags:
-      - Pokemon Evolution Services
+        - Pokemon Evolution Services
       operationId: getAllEvolutionLevels
       responses:
         "200":
@@ -320,7 +337,7 @@ paths:
   /api/v2/pokedex/pokemon/:
     get:
       tags:
-      - Pokemon Services
+        - Pokemon Services
       operationId: getPokemons
       responses:
         "200":
@@ -331,11 +348,21 @@ paths:
                 type: object
 components:
   schemas:
+    Role:
+      required:
+        - role
+      type: object
+      properties:
+        roleId:
+          type: integer
+          format: int32
+        role:
+          type: string
     User:
       required:
-      - email
-      - name
-      - password
+        - email
+        - name
+        - password
       type: object
       properties:
         id:
@@ -347,9 +374,11 @@ components:
           type: string
         password:
           type: string
+        role:
+          $ref: '#/components/schemas/Role'
     EvolutionForm:
       required:
-      - name
+        - name
       type: object
       properties:
         idEvolutionForm:
@@ -371,7 +400,7 @@ components:
           $ref: '#/components/schemas/EvolutionForm'
     Pokemon:
       required:
-      - name
+        - name
       type: object
       properties:
         numPokedex:
@@ -385,7 +414,7 @@ components:
             $ref: '#/components/schemas/Type'
     Type:
       required:
-      - type
+        - type
       type: object
       properties:
         idType:
