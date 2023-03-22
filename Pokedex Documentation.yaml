@@ -10,11 +10,15 @@ info:
     name: Apache 2.0
     url: http://foo.bar
   version: "2.0"
+externalDocs:
+  description: |-
+    WikiDex is the largest Pokémon encyclopedia in Spanish, with 27,179 articles, covering all the official information on video games, anime, manga, and Collectible Card Game.\n" +
+                            "This content comes from wikidex.net, and must be given attribution to its authors, as specified in the license.\n" +
+                            "Its use is prohibited to PlagioDex (the FANDOOM wiki), for repeatedly copying without giving attribution
+  url: https://www.wikidex.net/wiki/WikiDex
 servers:
   - url: http:localhost:8080//api/v2/pokedex/pokemon
     description: Localhost server
-security:
-  - JWT based Secirity: []
 tags:
   - name: Pokemon Services
     description: A list of the services related with the pokemons
@@ -25,13 +29,6 @@ tags:
     description: A list of the services related with the evolution levels
   - name: Pokemon Deatils Services
     description: A list of the services related with the details of the pokemons
-  - name: WikiDex
-    description: https://www.wikidex.net/wiki/Pok%C3%A9dex
-    externalDocs:
-      description: |-
-        WikiDex is the largest Pokémon encyclopedia in Spanish, with 27,179 articles, covering all the official information on video games, anime, manga, and Collectible Card Game.
-        This content comes from wikidex.net, and must be given attribution to its authors, as specified in the license.
-        Its use is prohibited to PlagioDex (the FANDOOM wiki), for repeatedly copying without giving attribution
   - name: User Services
     description: A list of the services related with the user's CRUD
   - name: Pokemon Evolution From Services
@@ -441,3 +438,7 @@ components:
           format: int32
         type:
           type: string
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
