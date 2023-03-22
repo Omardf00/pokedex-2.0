@@ -41,6 +41,7 @@ paths:
     get:
       tags:
         - User Services
+      description: Returns a list of all the users
       operationId: getAllUsers
       responses:
         "200":
@@ -52,6 +53,7 @@ paths:
     put:
       tags:
         - User Services
+      description: Updates the information of an specific user
       operationId: updateUser
       requestBody:
         content:
@@ -69,6 +71,7 @@ paths:
     post:
       tags:
         - User Services
+      description: Creates a new user
       operationId: createUser
       requestBody:
         content:
@@ -87,6 +90,7 @@ paths:
     get:
       tags:
         - Pokemon Evolution From Services
+      description: Returns a list of the evolutions of the pokemons
       operationId: getEvolutionFroms
       responses:
         "200":
@@ -98,6 +102,7 @@ paths:
     post:
       tags:
         - Pokemon Evolution From Services
+      description: Creates a new entry in the relation table
       operationId: setEvolutionFrom
       requestBody:
         content:
@@ -116,6 +121,7 @@ paths:
     get:
       tags:
         - Files Services
+      description: Returns a list of the files in the server
       operationId: listFiles
       responses:
         "200":
@@ -127,6 +133,7 @@ paths:
     post:
       tags:
         - Files Services
+      description: Uploads a file to the server
       operationId: uploadFile
       requestBody:
         content:
@@ -150,6 +157,7 @@ paths:
     get:
       tags:
         - User Services
+      description: Returns a user by id
       operationId: getUserById
       parameters:
         - name: id
@@ -168,6 +176,7 @@ paths:
     delete:
       tags:
         - User Services
+      description: Deletes a user from the database
       operationId: deleteUser
       parameters:
         - name: id
@@ -187,6 +196,7 @@ paths:
     get:
       tags:
         - Pokemon Services
+      description: Returns a pokemon by name
       operationId: getPokemon
       parameters:
         - name: name
@@ -205,6 +215,7 @@ paths:
     get:
       tags:
         - Pokemon Services
+      description: Returns a list of the the pokemons by type
       operationId: getPokemonsByType
       parameters:
         - name: type
@@ -223,6 +234,7 @@ paths:
     get:
       tags:
         - Pokemon Services
+      description: Returns a pokemon by id
       operationId: getPokemonById
       parameters:
         - name: id
@@ -242,6 +254,7 @@ paths:
     get:
       tags:
         - Pokemon Evolution From Services
+      description: Returns the origin of a pokemon
       operationId: getOriginByEvolution
       parameters:
         - name: pokemon
@@ -260,6 +273,7 @@ paths:
     get:
       tags:
         - Pokemon Evolution From Services
+      description: Returns a list of the evolutions of the pokemon
       operationId: getEvolutionsByOrigin
       parameters:
         - name: pokemon
@@ -278,6 +292,7 @@ paths:
     get:
       tags:
         - Pokemon Evolution Services
+      description: Returns the evolution level of a pokemon
       operationId: getEvolutionLevelByPokemon
       parameters:
         - name: pokemon
@@ -296,6 +311,7 @@ paths:
     get:
       tags:
         - Pokemon Deatils Services
+      description: Returns a list of all the pokemons with their details
       operationId: getAllPokemonDetails
       responses:
         "200":
@@ -308,6 +324,7 @@ paths:
     get:
       tags:
         - Pokemon Deatils Services
+      description: Returns the details of a pokemon
       operationId: getPokemonDetails
       parameters:
         - name: pokemon
@@ -326,6 +343,7 @@ paths:
     get:
       tags:
         - Pokemon Evolution Services
+      description: Returns a list of the evolution levels of the pokemons
       operationId: getAllEvolutionLevels
       responses:
         "200":
@@ -338,6 +356,7 @@ paths:
     get:
       tags:
         - Pokemon Services
+      description: Returns a list of all the pokemons
       operationId: getPokemons
       responses:
         "200":

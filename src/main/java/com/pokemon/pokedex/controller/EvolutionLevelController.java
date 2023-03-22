@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
@@ -32,6 +33,7 @@ public class EvolutionLevelController {
 	@Autowired
 	EvolutionLevelService evolutionLevelService;
 
+	@Operation(description = "Returns the evolution level of a pokemon")
 	@GetMapping("/evolutionLevel")
 	public ResponseEntity<?> getEvolutionLevelByPokemon(@Valid @RequestBody Pokemon pokemon, BindingResult result) {
 
@@ -68,6 +70,7 @@ public class EvolutionLevelController {
 
 	}
 
+	@Operation(description = "Returns a list of the evolution levels of the pokemons")
 	@GetMapping("/allEvolutionLevels")
 	public ResponseEntity<?> getAllEvolutionLevels() {
 

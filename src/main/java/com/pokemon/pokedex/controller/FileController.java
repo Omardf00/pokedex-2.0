@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +28,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RequestMapping("/api/v2/pokedex/file")
 @Tag(name = "Files Services", description = "A list of the services related with the management of files in the server")
 public class FileController {
-	
+
+	@Operation(description = "Uploads a file to the server")
 	@PostMapping("/")
 	public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file){
 		
@@ -54,7 +56,8 @@ public class FileController {
 		return new ResponseEntity<>(response, HttpStatus.CREATED);
 		
 	}
-	
+
+	@Operation(description = "Returns a list of the files in the server")
 	@GetMapping("/")
 	public ResponseEntity<?> listFiles(){
 		

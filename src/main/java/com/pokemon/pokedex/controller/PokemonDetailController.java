@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
@@ -31,7 +32,8 @@ public class PokemonDetailController {
 	
 	@Autowired
 	PokemonDetailService pokemonDetailService;
-	
+
+	@Operation(description = "Returns the details of a pokemon")
 	@GetMapping("/detailsByPokemon")
 	public ResponseEntity<?> getPokemonDetails(@Valid @RequestBody Pokemon pokemon, BindingResult result){
 		
@@ -64,7 +66,8 @@ public class PokemonDetailController {
 		
 		return new ResponseEntity<>(pokemonFinal, HttpStatus.OK);
 	}
-	
+
+	@Operation(description = "Returns a list of all the pokemons with their details")
 	@GetMapping("/details")
 	public ResponseEntity<?> getAllPokemonDetails(){
 		

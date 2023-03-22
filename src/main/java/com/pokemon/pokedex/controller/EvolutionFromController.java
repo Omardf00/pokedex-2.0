@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,11 +28,13 @@ public class EvolutionFromController {
     @Autowired
     EvolutionFromService evolutionFromService;
 
+    @Operation(description = "Returns a list of the evolutions of the pokemons")
     @GetMapping("/evolutionFrom")
     public ResponseEntity<?> getEvolutionFroms() {
         return new ResponseEntity<>(evolutionFromService.getEvolutionFroms(), HttpStatus.OK);
     }
 
+    @Operation(description = "Returns a list of the evolutions of the pokemon")
     @GetMapping("/evolution")
     public ResponseEntity<?> getEvolutionsByOrigin(@RequestBody Pokemon pokemon) {
         Map<String, Object> response = new HashMap<>();
@@ -49,6 +52,7 @@ public class EvolutionFromController {
         }
     }
 
+    @Operation(description = "Returns the origin of a pokemon")
     @GetMapping("/origin")
     public ResponseEntity<?> getOriginByEvolution(@RequestBody Pokemon pokemon) {
         Map<String, Object> response = new HashMap<>();
@@ -66,6 +70,7 @@ public class EvolutionFromController {
         }
     }
 
+    @Operation(description = "Creates a new entry in the relation table")
     @PostMapping("/evolutionFrom")
     public ResponseEntity<?> setEvolutionFrom(@RequestBody EvolutionFrom evolutionFrom) {
         return new ResponseEntity<>(evolutionFromService.setEvolutionFrom(evolutionFrom), HttpStatus.OK);

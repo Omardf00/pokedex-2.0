@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
@@ -40,7 +41,8 @@ public class UserController {
 	
 	@Autowired
 	RoleService roleService;
-	
+
+	@Operation(description = "Returns a list of all the users")
 	@GetMapping("/")
 	public ResponseEntity<?> getAllUsers(){
 		
@@ -62,7 +64,8 @@ public class UserController {
 		return new ResponseEntity<>(users, HttpStatus.OK);
 		
 	}
-	
+
+	@Operation(description = "Returns a user by id")
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getUserById(@PathVariable("id") int id){
 		
@@ -89,7 +92,8 @@ public class UserController {
 		return new ResponseEntity<>(user, HttpStatus.OK);
 		
 	}
-	
+
+	@Operation(description = "Creates a new user")
 	@PostMapping("/")
 	public ResponseEntity<?> createUser(@Valid @RequestBody User user, BindingResult result){
 		
@@ -131,7 +135,8 @@ public class UserController {
 		
 		return new ResponseEntity<>(createUserResponse, HttpStatus.CREATED);
 	}
-	
+
+	@Operation(description = "Updates the information of an specific user")
 	@PutMapping("/")
 	public ResponseEntity<?> updateUser(@Valid @RequestBody User user, BindingResult result){
 		
@@ -177,7 +182,8 @@ public class UserController {
 		
 		return new ResponseEntity<>(updateUserResponse, HttpStatus.OK);
 	}
-	
+
+	@Operation(description = "Deletes a user from the database")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deleteUser(@PathVariable("id") int id){
 		
