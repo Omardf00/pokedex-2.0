@@ -2,6 +2,7 @@ package com.pokemon.pokedex.controller;
 
 import com.pokemon.pokedex.service.PokemonService;
 import com.pokemon.pokedex.service.QRCodeService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
@@ -32,6 +33,7 @@ public class QRCodeController {
     private final String URL = "https://www.wikidex.net/wiki/";
 
     @GetMapping
+    @Operation(description = "Returns a QR code that gives access to www.wikidex.net/wiki/WikiDex")
     public ResponseEntity<?> generateQRCode(HttpServletResponse response,
                                          @RequestParam String name,
                                          @RequestParam(defaultValue = "350") int width,
