@@ -33,6 +33,8 @@ tags:
     description: A list of the services related with the user's CRUD
   - name: Pokemon Evolution From Services
     description: A list of the services related with the origins of the pokemons
+  - name: QR Code Services
+    description: Service that generates QR Codes to get more data of the pokemons
 paths:
   /api/v2/pokedex/user/:
     get:
@@ -182,6 +184,39 @@ paths:
           schema:
             type: integer
             format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v2/pokedex/qr:
+    get:
+      tags:
+        - QR Code Services
+      description: Returns a QR code that gives access to www.wikidex.net/wiki/WikiDex
+      operationId: generateQRCode
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: width
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 350
+        - name: height
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 350
       responses:
         "200":
           description: OK
