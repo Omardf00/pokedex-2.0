@@ -35,6 +35,8 @@ public class WebSecurityConfig {
 				.anyRequest()
 				.authenticated()
 				.and()
+				.oauth2Login()
+				.and()
 				.httpBasic()
 				.and()
 				.sessionManagement()
